@@ -1,0 +1,16 @@
+version: '3'
+services:
+  herb-stonks:
+    build: ./sample
+    container_name: herb-stonks
+    ports:
+    - 8000:8000
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+    - 3000:3000
+
+volumes:
+  data:
+    driver: local
