@@ -8,11 +8,15 @@ services:
     networks:
       static-network:
         ipv4_address: 172.20.128.1
-  prometheus:
-    build: ./prometheus
-    container_name: prometheus
+  postgres:
+    build: ./postgres
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+    - herb-stonks-postgres:/var/lib/postgresql/data
     ports:
-    - 9090:9090
+      - 5432:5432
     networks:
       static-network:
         ipv4_address: 172.20.128.2
@@ -20,7 +24,7 @@ services:
     image: grafana/grafana:latest
     container_name: grafana
     volumes:
-      - herb-stonks:/var/lib/grafana
+      - herb-stonks-grafana:/var/lib/grafana
     ports:
     - 3000:3000
     networks:
@@ -28,7 +32,9 @@ services:
         ipv4_address: 172.20.128.3
 
 volumes:
-  herb-stonks:
+  herb-stonks-grafana:
+    driver: local
+  herb-stonks-postgres:
     driver: local
 
 networks:
