@@ -19,6 +19,8 @@ services:
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
+    volumes:
+      - herb-stonks:/var/lib/grafana
     ports:
     - 3000:3000
     networks:
@@ -26,7 +28,7 @@ services:
         ipv4_address: 172.20.128.3
 
 volumes:
-  data:
+  herb-stonks:
     driver: local
 
 networks:
