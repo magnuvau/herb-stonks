@@ -1,1 +1,1 @@
-CREATE TABLE item(name TEXT, price INT, price_date DATE);
+CREATE TABLE item(name TEXT, date DATE UNIQUE, value INT, trend INT);
