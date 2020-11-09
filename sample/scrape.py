@@ -4,10 +4,6 @@ import re
 import os
 import time
 
-while int(os.system("service postgresql status")) is not 1024:
-    print("Watinig for postgresql...")
-    time.sleep(1)
-
 url = "https://secure.runescape.com/m=itemdb_oldschool/Ranarr+seed/viewitem?obj=5295"
 
 print("Fetching ranarr seed...", end="")
