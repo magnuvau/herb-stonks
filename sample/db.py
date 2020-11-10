@@ -15,6 +15,6 @@ def connection():
 
 def insert(name, date, value, trend):
     conn = connection()
-    conn.cursor().execute('''INSERT INTO item VALUES('%s', '%s', %d, %d) ON CONFLICT (date) DO NOTHING;''' % (name, date, value, trend))
+    conn.cursor().execute('''INSERT INTO item VALUES('%s', '%s', %d, %d) ON CONFLICT (name, date) DO NOTHING;''' % (name, date, value, trend))
     conn.commit()
     conn.close()

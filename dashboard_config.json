@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 3,
   "links": [],
   "panels": [
     {
@@ -65,9 +65,10 @@
         {
           "format": "time_series",
           "group": [],
+          "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  $__time(date),\n  price\nFROM\n  lol\nWHERE\n  $__timeFilter(date)\n",
+          "rawSql": "SELECT\n  $__time(date),\n  value,\n  name\nFROM\n  item\nWHERE\n  $__timeFilter(date)",
           "refId": "A",
           "select": [
             [
@@ -93,7 +94,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Price",
+      "title": "Herbs",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -139,7 +140,7 @@
     "list": []
   },
   "time": {
-    "from": "now-7d",
+    "from": "now-180d",
     "to": "now"
   },
   "timepicker": {
@@ -159,5 +160,5 @@
   "timezone": "",
   "title": "Herbz",
   "uid": "PPoLpT2Gk",
-  "version": 1
+  "version": 3
 }
