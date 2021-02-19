@@ -13,8 +13,8 @@ def connection():
     return connection
 
 
-def insert(name, date, value, trend):
+def insert(name, date, value):
     conn = connection()
-    conn.cursor().execute('''INSERT INTO item VALUES('%s', '%s', %d, %d) ON CONFLICT (name, date) DO NOTHING;''' % (name, date, value, trend))
+    conn.cursor().execute('''INSERT INTO item VALUES('%s', '%s', %d) ON CONFLICT (name, date) DO NOTHING;''' % (name, date, value))
     conn.commit()
     conn.close()

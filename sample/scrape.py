@@ -1,29 +1,29 @@
-from db import insert
+from string import Template
+from datetime import datetime
 import requests
-import re
-import os
 import time
-
-base_url = "https://secure.runescape.com/m=itemdb_oldschool"
+import json
+import db
 
 items = [
-    ("ranarr_seed", "%s/Ranarr+seed/viewitem?obj=5295" % base_url),
-    ("ranarr_weed", "%s/Ranarr+weed/viewitem?obj=257" % base_url)
+    ("Ranarr seed", 5295)
 ]
 
+api_url = Template('https://secure.runescape.com/m=itemdb_oldschool/api/graph/${ITEM_ID}.json')
+
 for item in items:
-    print("Getting requests from: %s" % item[1])
-    r = requests.get(item[1])
+    request = requests.get(api_url.substitute(ITEM_ID=item[1]))
+    print("API return status: %s" % request.status_code)
 
-    data = re.findall(r"average180.push\(\[new Date\('\d{4}\/\d{2}\/\d{2}'\), \d{1,10}, \d{1,10}\]\);", r.text)
+    daily = json.loads(request.text)['daily']
+    average = json.loads(request.text)['average']
+    
+    for timestamp in average:
+        day = datetime.utcfromtimestamp(int(timestamp[:-3])).strftime('%Y-%m-%d')
+        price = average[timestamp]
+        db.insert(item[0], day, price)
+    
+#    for timestamp in daily:
+#        day = datetime.utcfromtimestamp(int(timestamp[:-3])).strftime('%d-%m-%Y')
+#        price = daily[timestamp]
 
-    count = 0
-
-    for average in data:
-        date = re.findall(r"\d{4}\/\d{2}\/\d{2}", average)[0]
-        price = int(re.findall(r"\d{1,10},", average)[0][:-1])
-        trend = int(re.findall(r"\d{1,10}\]", average)[0][:-1])
-        insert(item[0], date, price, trend)
-        count = count + 1
-
-    print("Inserted %d rows for: %s" % (count, item[0]))
