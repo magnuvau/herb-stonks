@@ -5,6 +5,9 @@ import time
 import json
 import db
 
+def date(timestamp):
+    return datetime.utcfromtimestamp(int(timestamp)).strftime('%Y-%m-%d %H:%M:%S')
+
 items = [
     ("Ranarr seed", 5295)
 ]
@@ -22,8 +25,14 @@ for item in items:
         day = datetime.utcfromtimestamp(int(timestamp[:-3])).strftime('%Y-%m-%d')
         price = average[timestamp]
         db.insert(item[0], day, price)
-    
+
 #    for timestamp in daily:
 #        day = datetime.utcfromtimestamp(int(timestamp[:-3])).strftime('%d-%m-%Y')
 #        price = daily[timestamp]
+
+while(True):
+    with open('scrape.log', 'a') as log:
+        log.write("[%s] Polling...\n" % date(time.time()))
+        log.close()
+    time.sleep(10)
 
