@@ -9,7 +9,8 @@ def date(timestamp):
     return datetime.utcfromtimestamp(int(timestamp)).strftime('%Y-%m-%d %H:%M:%S')
 
 items = [
-    ("Ranarr seed", 5295)
+    ("Ranarr seed", 5295),
+    ("Ranarr weed", 257)
 ]
 
 api_url = Template('https://secure.runescape.com/m=itemdb_oldschool/api/graph/${ITEM_ID}.json')
