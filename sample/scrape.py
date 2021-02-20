@@ -24,11 +24,12 @@ for item in items:
     for timestamp in average:
         day = datetime.utcfromtimestamp(int(timestamp[:-3])).strftime('%Y-%m-%d')
         price = average[timestamp]
-        db.insert(item[0], day, price)
+        db.average(item[0], day, price)
 
-#    for timestamp in daily:
-#        day = datetime.utcfromtimestamp(int(timestamp[:-3])).strftime('%d-%m-%Y')
-#        price = daily[timestamp]
+    for timestamp in daily:
+        day = datetime.utcfromtimestamp(int(timestamp[:-3])).strftime('%Y-%m-%d')
+        price = daily[timestamp]
+        db.daily(item[0], day, price)
 
 while(True):
     with open('scrape.log', 'a') as log:
