@@ -26,10 +26,10 @@ while(True):
         request = requests.get(api_url.substitute(ITEM_ID=item[1]))
         average = json.loads(request.text)['average']
       
-    for timestamp in average:
-      day = date(timestamp[:-3])
-      price = average[timestamp]
-      db.insert_average(item[0], day, price)
+        for timestamp in average:
+            day = date(timestamp[:-3])
+            price = average[timestamp]
+            db.insert_average(item[0], day, price)
 
     log("[%s] Scraped!\n" % date(time.time()))
     time.sleep(60 * 60 * 24)
