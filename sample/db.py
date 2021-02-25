@@ -17,15 +17,9 @@ def connection():
     return connection
 
 
-def average(name, date, value):
+def insert_average(name, date, value):
     conn = connection()
     conn.cursor().execute('''INSERT INTO average VALUES('%s', '%s', %d) ON CONFLICT (name, date) DO NOTHING;''' % (name, date, value))
-    conn.commit()
-    conn.close()
-
-def daily(name, date, value):
-    conn = connection()
-    conn.cursor().execute('''INSERT INTO daily VALUES('%s', '%s', %d) ON CONFLICT (name, date) DO NOTHING;''' % (name, date, value))
     conn.commit()
     conn.close()
     

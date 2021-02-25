@@ -71,7 +71,7 @@
           "group": [],
           "metricColumn": "name",
           "rawQuery": false,
-          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date)\nORDER BY 1,2",
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name ~ 'seed'\nORDER BY 1,2",
           "refId": "A",
           "select": [
             [
@@ -91,6 +91,16 @@
               "name": "$__timeFilter",
               "params": [],
               "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
             }
           ]
         }
@@ -189,7 +199,7 @@
           "group": [],
           "metricColumn": "name",
           "rawQuery": false,
-          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM daily\nWHERE\n  $__timeFilter(date)\nORDER BY 1,2",
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name ~ 'weed'\nORDER BY 1,2",
           "refId": "A",
           "select": [
             [
@@ -201,7 +211,7 @@
               }
             ]
           ],
-          "table": "daily",
+          "table": "average",
           "timeColumn": "date",
           "timeColumnType": "date",
           "where": [
@@ -209,6 +219,16 @@
               "name": "$__timeFilter",
               "params": [],
               "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'weed'"
+              ],
+              "type": "expression"
             }
           ]
         }
@@ -217,7 +237,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Seeds Daily",
+      "title": "Herbs Average",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -284,5 +304,5 @@
   "timezone": "",
   "title": "Herb Stonks",
   "uid": "PPoLpT2Gk",
-  "version": 3
+  "version": 1
 }
