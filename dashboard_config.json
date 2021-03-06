@@ -34,9 +34,526 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 18,
         "w": 12,
         "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 7,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.4.1",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": true,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Ranarr seed'\nORDER BY 1,2",
+          "refId": "ranarr_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": true,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Ranarr weed'\nORDER BY 1,2",
+          "refId": "ranarr_weed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": true,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Toadflax seed'\nORDER BY 1,2",
+          "refId": "toadflax_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": true,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Toadflax weed'\nORDER BY 1,2",
+          "refId": "toadflax_weed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": true,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Avantoe seed'\nORDER BY 1,2",
+          "refId": "avantoe_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": true,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Avantoe weed'\nORDER BY 1,2",
+          "refId": "avantoe_weed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": true,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Snapdragon seed'\nORDER BY 1,2",
+          "refId": "snapdragon_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": true,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Snapdragon weed'\nORDER BY 1,2",
+          "refId": "snapdragon_weed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": true,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Torstol seed'\nORDER BY 1,2",
+          "refId": "torstol_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": true,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Torstol weed'\nORDER BY 1,2",
+          "refId": "torstol_weed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "datasource": "__expr__",
+          "expression": "$toadflax_weed * 8 - $toadflax_seed",
+          "hide": false,
+          "refId": "Ranarr",
+          "type": "math"
+        },
+        {
+          "datasource": "__expr__",
+          "expression": "$ranarr_weed * 8 - $ranarr_seed",
+          "hide": false,
+          "refId": "Toadflax",
+          "type": "math"
+        },
+        {
+          "datasource": "__expr__",
+          "expression": "$avantoe_weed * 8 - $avantoe_seed",
+          "hide": false,
+          "refId": "Avantoe",
+          "type": "math"
+        },
+        {
+          "datasource": "__expr__",
+          "expression": "$snapdragon_weed * 8 - $snapdragon_seed",
+          "hide": false,
+          "refId": "Snapdragon",
+          "type": "math"
+        },
+        {
+          "datasource": "__expr__",
+          "expression": "$torstol_weed * 8 - $torstol_seed",
+          "hide": false,
+          "refId": "Torstol",
+          "type": "math"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Average profit per seed",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transformations": [],
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:770",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:771",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "PostgreSQL",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
         "y": 0
       },
       "hiddenSeries": false,
@@ -70,9 +587,165 @@
           "format": "time_series",
           "group": [],
           "metricColumn": "name",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name ~ 'seed'\nORDER BY 1,2",
-          "refId": "A",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Ranarr seed'\nORDER BY 1,2",
+          "refId": "ranarr_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Toadflax seed'\nORDER BY 1,2",
+          "refId": "toadflax_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Avantoe seed'\nORDER BY 1,2",
+          "refId": "avantoe_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Snapdragon seed'\nORDER BY 1,2",
+          "refId": "snapdragon_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Torstol seed'\nORDER BY 1,2",
+          "refId": "torstol_seed",
           "select": [
             [
               {
@@ -126,6 +799,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:770",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -134,6 +808,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:771",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -164,11 +839,11 @@
       "gridPos": {
         "h": 9,
         "w": 12,
-        "x": 0,
+        "x": 12,
         "y": 9
       },
       "hiddenSeries": false,
-      "id": 5,
+      "id": 8,
       "legend": {
         "avg": false,
         "current": false,
@@ -198,9 +873,9 @@
           "format": "time_series",
           "group": [],
           "metricColumn": "name",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name ~ 'weed'\nORDER BY 1,2",
-          "refId": "A",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Ranarr seed'\nORDER BY 1,2",
+          "refId": "ranarr_seed",
           "select": [
             [
               {
@@ -226,7 +901,163 @@
               "params": [
                 "name",
                 "~",
-                "'weed'"
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Toadflax seed'\nORDER BY 1,2",
+          "refId": "toadflax_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Avantoe seed'\nORDER BY 1,2",
+          "refId": "avantoe_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Snapdragon seed'\nORDER BY 1,2",
+          "refId": "snapdragon_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
+              ],
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "hide": false,
+          "metricColumn": "name",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  date AS \"time\",\n  name AS metric,\n  value\nFROM average\nWHERE\n  $__timeFilter(date) AND\n  name = 'Torstol seed'\nORDER BY 1,2",
+          "refId": "torstol_seed",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "average",
+          "timeColumn": "date",
+          "timeColumnType": "date",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "name",
+                "~",
+                "'seed'"
               ],
               "type": "expression"
             }
@@ -237,7 +1068,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Herbs Average",
+      "title": "Seeds Average",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -254,6 +1085,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:770",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -262,6 +1094,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:771",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -304,5 +1137,5 @@
   "timezone": "",
   "title": "Herb Stonks",
   "uid": "PPoLpT2Gk",
-  "version": 1
+  "version": 3
 }
