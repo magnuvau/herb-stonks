@@ -23,3 +23,10 @@ def insert_average(name, date, value):
     conn.commit()
     conn.close()
     
+def count_average(name):
+    conn = connection()
+    cursor = conn.cursor()
+    cursor.execute('''SELECT COUNT(1) FROM average WHERE name = \'%s\';''' % name)
+    count = cursor.fetchone()[0]
+    conn.close()
+    return count
